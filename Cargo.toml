@@ -5,6 +5,7 @@ edition = "2021"
 authors = ["Christian Belloni christianbelloni@hotmail.it"]
 description = "a tool to generate random files"
 categories = ["command-line-utilities"]
+license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
