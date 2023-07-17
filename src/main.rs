@@ -9,7 +9,11 @@ static MEGA: u64 = 1024 * 1024;
 
 #[tokio::main]
 pub async fn main() -> anyhow::Result<()> {
-    let args = Args::parse();
+    let args = if let Ok(args) = Args::try_parse() {
+        args
+    } else {
+        Args::parse_from(std::env::args().skip(1))
+    };
     let mut root = PathBuf::from(std::env::current_dir().unwrap());
     root.push(&args.dir);
     println!("{args:?}");
